@@ -13,11 +13,6 @@ class AuthController {
 
       payload.password = bcrypt.hashSync(payload.password, salt);
 
-      // const token = jwt.sign({email: payload.email}, process.env.JWT_SECRET, {expiresIn: '1h'});
-
-      // payload.token = token;
-      // payload.createdAt = new Date();
-
       const user = await prisma.user.create({
         data: payload,
       });
