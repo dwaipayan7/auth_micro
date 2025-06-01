@@ -11,10 +11,17 @@ class UserController {
         where: {
           id: id,
         },
+        // select: {
+        //   id: true,
+        //   name: true,
+        //   email: true,
+        //   createdAt: true,
+        //   updatedAt: true,
+        // },
       });
 
       return res.status(200).json({
-        message: "User found",
+        // message: "User found",
         user: user,
       });
     } catch (error) {
